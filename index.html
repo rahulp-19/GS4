@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APEX Performance Club | Elite Gym & Training Facility</title>
+    <meta name="description" content="APEX Performance Club is a premier athletic facility featuring world-class coaching, strength & conditioning, recovery suites, and cutting-edge equipment." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome for sleek icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Top Sticky Glass Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="brand-logo" aria-label="APEX Performance Club">
+                <span class="logo-mark"><i class="fa-solid fa-bolt"></i></span>
+                <div class="brand-text">
+                    <strong>APEX</strong>
+                    <span class="brand-sub">PERFORMANCE</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" id="navMenu" aria-label="Main Navigation">
+                <a href="#hero" class="nav-item is-active">Home</a>
+                <a href="#programs" class="nav-item">Programs</a>
+                <a href="#facility" class="nav-item">Facility</a>
+                <a href="#coaches" class="nav-item">Coaches</a>
+                <a href="#pricing" class="nav-item">Memberships</a>
+                <a href="#calculator" class="nav-item">Fitness Tool</a>
+                <a href="#contact" class="nav-item">Contact</a>
+                <button class="btn btn-primary nav-mobile-cta open-pass-trigger">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span>Claim Free VIP Pass</span>
+                </button>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-outline nav-cta open-pass-trigger" id="openPassModalBtn">Free VIP Pass</button>
+                <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO SLIDER (INTERACTIVE + SLIDE/ZOOM ANIMATIONS) -->
+    <section class="club-hero" id="hero" aria-label="APEX Performance Club hero slider">
+        <div class="hero-top-accent">
+            <span>// NYC FLAGSHIP PERFORMANCE FACILITY</span>
+            <span>OPEN 24/7 FOR MEMBERS</span>
+        </div>
+
+        <div class="slide-stage" id="slider">
+            <div class="image-rail" aria-hidden="true">
+                <!-- Slide 1: Strength -->
+                <figure class="image-card is-active" data-index="0">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop" alt="Athlete strength training with heavy dumbbells" />
+                    <div class="card-overlay"></div>
+                </figure>
+
+                <!-- Slide 2: Powerlifting / Iron -->
+                <figure class="image-card" data-index="1">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1470&auto=format&fit=crop" alt="Powerlifting barbell deadlift with chalk dust" />
+                    <div class="card-overlay"></div>
+                </figure>
+
+                <!-- Slide 3: Conditioning -->
+                <figure class="image-card" data-index="2">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470&auto=format&fit=crop" alt="High-intensity battle ropes endurance training" />
+                    <div class="card-overlay"></div>
+                </figure>
+
+                <!-- Slide 4: Recovery -->
+                <figure class="image-card" data-index="3">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1470&auto=format&fit=crop" alt="Premium gym floor and recovery atmosphere" />
+                    <div class="card-overlay"></div>
+                </figure>
+            </div>
+
+            <article class="copy-zone" aria-live="polite">
+                <div class="eyebrow-wrapper">
+                    <span class="pulse-dot"></span>
+                    <span class="eyebrow" id="eyebrow">ELITE ATHLETICS</span>
+                </div>
+                <div class="headline-mask">
+                    <h1 class="headline" id="headline">THE ART<br />OF POWER</h1>
+                </div>
+                <p class="hero-desc" id="heroDesc">
+                    Uncompromising training environments designed for peak physiological performance, pure biomechanical excellence, and unyielding discipline.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#programs" class="btn btn-primary">
+                        <span>Explore Programs</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#facility" class="btn btn-glass">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Tour Facility</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <div class="category-badge" id="category">STRENGTH &amp; CONDITIONING</div>
+
+        <div class="hero-bottombar">
+            <div class="facility-info">
+                <strong>520 MADISON AVE, NEW YORK</strong>
+                <span>Private Coaching &bull; Hyperbaric Cryo &bull; Olympic Turf</span>
+            </div>
+
+            <div class="slider-controls">
+                <button class="slider-arrow" id="prevSlide" type="button" aria-label="Previous slide">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="counter" id="counter">01 / 04</div>
+                <button class="slider-arrow next-btn" id="nextSlide" type="button" aria-label="Next slide">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <a href="#stats" class="scroll-indicator" aria-label="Scroll to discover more">
+            <span class="scroll-text">SCROLL</span>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </a>
+    </section>
+
+    <!-- SECTION 2: STATS & HIGHLIGHTS BANNER (ZOOM-IN ANIMATIONS) -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card reveal-zoom">
+                    <div class="stat-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <div class="stat-number" data-target="25000">0</div>
+                    <span class="stat-suffix">SQ FT</span>
+                    <p class="stat-label">Ultra-Premium Training Floor</p>
+                </div>
+
+                <div class="stat-card reveal-zoom" data-delay="100">
+                    <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <div class="stat-number" data-target="48">0</div>
+                    <span class="stat-suffix">+</span>
+                    <p class="stat-label">Master Tier Coaches & Olympians</p>
+                </div>
+
+                <div class="stat-card reveal-zoom" data-delay="200">
+                    <div class="stat-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="stat-number" data-target="99">0</div>
+                    <span class="stat-suffix">%</span>
+                    <p class="stat-label">Member Transformation Rate</p>
+                </div>
+
+                <div class="stat-card reveal-zoom" data-delay="300">
+                    <div class="stat-icon"><i class="fa-solid fa-snowflake"></i></div>
+                    <div class="stat-number" data-target="100">0</div>
+                    <span class="stat-suffix">%</span>
+                    <p class="stat-label">Cryo & Cold Plunge Recovery Tech</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: TRAINING DISCIPLINES / PROGRAMS (SLIDE-IN LEFT/RIGHT) -->
+    <section class="section programs-section" id="programs">
+        <div class="container">
+            <div class="section-header text-center reveal-up">
+                <div class="tag-pill"><i class="fa-solid fa-fire"></i> DISCIPLINE-BASED TRAINING</div>
+                <h2 class="section-title">ENGINEERED FOR <span class="text-accent">EVERY LEVEL</span></h2>
+                <p class="section-subtitle">Custom-crafted scientific regimens combining neuromuscular hypertrophy, endurance engine conditioning, and athlete mobility.</p>
+            </div>
+
+            <div class="programs-grid">
+                <!-- Program 1: Strength & Conditioning (Slide from Left) -->
+                <div class="program-card reveal-left">
+                    <div class="program-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1470&auto=format&fit=crop" alt="Strength & Powerlifting barbell workout" class="zoom-img" />
+                        <span class="program-badge">STRENGTH</span>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-meta">
+                            <span><i class="fa-regular fa-clock"></i> 60 MIN</span>
+                            <span><i class="fa-solid fa-fire-flame-curved"></i> 750 KCAL</span>
+                        </div>
+                        <h3 class="program-title">Hypertrophy & Heavy Power</h3>
+                        <p class="program-desc">Heavy compound lifts, progressive overload tracking, and muscle tension mastery under certified powerlifting coaches.</p>
+                        <ul class="program-features">
+                            <li><i class="fa-solid fa-check"></i> Olympic barbell platform stations</li>
+                            <li><i class="fa-solid fa-check"></i> 1-on-1 velocity-based velocity meters</li>
+                            <li><i class="fa-solid fa-check"></i> Custom periodization schedules</li>
+                        </ul>
+                        <button class="btn btn-outline btn-full open-pass-trigger">Book Trial Session</button>
+                    </div>
+                </div>
+
+                <!-- Program 2: HYROX & Metabolic Conditioning (Zoom In) -->
+                <div class="program-card reveal-zoom" data-delay="150">
+                    <div class="program-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470&auto=format&fit=crop" alt="Functional fitness kettlebells and sprint training" class="zoom-img" />
+                        <span class="program-badge badge-accent">HYROX ENGINE</span>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-meta">
+                            <span><i class="fa-regular fa-clock"></i> 50 MIN</span>
+                            <span><i class="fa-solid fa-fire-flame-curved"></i> 900 KCAL</span>
+                        </div>
+                        <h3 class="program-title">Functional Stamina & Sleds</h3>
+                        <p class="program-desc">High-lactate threshold training, SkiErg sprints, turf sled pushes, and kettlebell complexes to maximize VO2 max output.</p>
+                        <ul class="program-features">
+                            <li><i class="fa-solid fa-check"></i> Official HYROX simulation track</li>
+                            <li><i class="fa-solid fa-check"></i> Heart-rate zone telemetry monitors</li>
+                            <li><i class="fa-solid fa-check"></i> Agility & plyometric sprint lanes</li>
+                        </ul>
+                        <button class="btn btn-outline btn-full open-pass-trigger">Book Trial Session</button>
+                    </div>
+                </div>
+
+                <!-- Program 3: Striking & Combat (Slide from Right) -->
+                <div class="program-card reveal-right" data-delay="300">
+                    <div class="program-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1470&auto=format&fit=crop" alt="Boxing training heavy bag strikes" class="zoom-img" />
+                        <span class="program-badge">COMBAT</span>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-meta">
+                            <span><i class="fa-regular fa-clock"></i> 55 MIN</span>
+                            <span><i class="fa-solid fa-fire-flame-curved"></i> 850 KCAL</span>
+                        </div>
+                        <h3 class="program-title">Apex Boxing & Core Dynamics</h3>
+                        <p class="program-desc">Authentic pugilistic striking fundamentals, heavy bag intervals, reactive mitt work, and rotational core power.</p>
+                        <ul class="program-features">
+                            <li><i class="fa-solid fa-check"></i> Custom leather teardrop bags</li>
+                            <li><i class="fa-solid fa-check"></i> Professional glove & wrap sanitization</li>
+                            <li><i class="fa-solid fa-check"></i> Rotational torque enhancement</li>
+                        </ul>
+                        <button class="btn btn-outline btn-full open-pass-trigger">Book Trial Session</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: THE FACILITY / GALLERY SHOWCASE (ZOOM & INTERACTIVE MODAL) -->
+    <section class="section facility-section" id="facility">
+        <div class="container">
+            <div class="facility-intro">
+                <div class="reveal-left">
+                    <div class="tag-pill"><i class="fa-solid fa-building"></i> 25,000 SQ FT SANCTUARY</div>
+                    <h2 class="section-title">A MASTERPIECE OF <br /><span class="text-accent">IRON & LUXURY</span></h2>
+                </div>
+                <div class="reveal-right">
+                    <p class="lead-text">
+                        Designed by world-renowned biomechanists and interior architects. Every inch of APEX delivers acoustic isolation, medical-grade air purification, and precision custom machinery.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-masonry">
+                <!-- Gallery 1 -->
+                <div class="gallery-item item-large reveal-zoom">
+                    <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1470&auto=format&fit=crop" alt="Olympic lifting zone" />
+                    <div class="gallery-caption">
+                        <h4>Olympic Barbell Platforms</h4>
+                        <span>Eleiko IWF certified plates & shock absorption</span>
+                    </div>
+                </div>
+
+                <!-- Gallery 2 -->
+                <div class="gallery-item reveal-up" data-delay="100">
+                    <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?q=80&w=1471&auto=format&fit=crop" alt="Custom dumbbell array" />
+                    <div class="gallery-caption">
+                        <h4>Precision Dumbbell Array</h4>
+                        <span>Solid urethane up to 180 lbs with custom knurling</span>
+                    </div>
+                </div>
+
+                <!-- Gallery 3 -->
+                <div class="gallery-item reveal-up" data-delay="200">
+                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1469&auto=format&fit=crop" alt="High tech cardio deck" />
+                    <div class="gallery-caption">
+                        <h4>Biometric Cardio Deck</h4>
+                        <span>Woodway treadmills & Wattbikes with telemetry</span>
+                    </div>
+                </div>
+
+                <!-- Gallery 4 -->
+                <div class="gallery-item item-wide reveal-zoom" data-delay="300">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1470&auto=format&fit=crop" alt="Thermal spa cold plunge" />
+                    <div class="gallery-caption">
+                        <h4>Cold Plunges & Infrared Sauna</h4>
+                        <span>38°F contrast plunge baths & medical light therapy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: MASTER COACHES (SLIDE-IN & ZOOM HOVER) -->
+    <section class="section coaches-section" id="coaches">
+        <div class="container">
+            <div class="section-header text-center reveal-up">
+                <div class="tag-pill"><i class="fa-solid fa-medal"></i> WORLD-CLASS FACULTY</div>
+                <h2 class="section-title">TRAIN UNDER <span class="text-accent">LEGENDS</span></h2>
+                <p class="section-subtitle">Our coaching staff holds Olympic credentials, CSCS certifications, and decades of professional athletic pedigree.</p>
+            </div>
+
+            <div class="coaches-grid">
+                <!-- Coach 1 -->
+                <div class="coach-card reveal-left">
+                    <div class="coach-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=687&auto=format&fit=crop" alt="Marcus Vance - Head Strength Coach" />
+                        <div class="coach-overlay-info">
+                            <span class="experience-tag">14 YRS EXP</span>
+                            <div class="social-icons">
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="coach-details">
+                        <h3 class="coach-name">Marcus Vance</h3>
+                        <span class="coach-role">Head of Strength & Biomechanics</span>
+                        <p class="coach-bio">Former national weightlifting coach and advisor to UFC champions and NFL linebackers.</p>
+                    </div>
+                </div>
+
+                <!-- Coach 2 -->
+                <div class="coach-card reveal-up" data-delay="150">
+                    <div class="coach-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=687&auto=format&fit=crop" alt="Elena Rostova - Olympic Lifting & Mobility" />
+                        <div class="coach-overlay-info">
+                            <span class="experience-tag">10 YRS EXP</span>
+                            <div class="social-icons">
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="coach-details">
+                        <h3 class="coach-name">Elena Rostova</h3>
+                        <span class="coach-role">Olympic Mobility & Hypertrophy</span>
+                        <p class="coach-bio">Olympic medalist trainer focusing on joint longevity, tendon density, and kinetic movement.</p>
+                    </div>
+                </div>
+
+                <!-- Coach 3 -->
+                <div class="coach-card reveal-up" data-delay="300">
+                    <div class="coach-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=764&auto=format&fit=crop" alt="Damian Cole - HYROX & Combat Conditioning" />
+                        <div class="coach-overlay-info">
+                            <span class="experience-tag">12 YRS EXP</span>
+                            <div class="social-icons">
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="coach-details">
+                        <h3 class="coach-name">Damian Cole</h3>
+                        <span class="coach-role">HYROX Elite & Combat Conditioning</span>
+                        <p class="coach-bio">Elite tactical athlete conditioning specialist and endurance record holder.</p>
+                    </div>
+                </div>
+
+                <!-- Coach 4 -->
+                <div class="coach-card reveal-right" data-delay="450">
+                    <div class="coach-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop" alt="Dr. Sophia Lin - Sports Scientist & Recovery" />
+                        <div class="coach-overlay-info">
+                            <span class="experience-tag">PH.D. PHYSIOLOGY</span>
+                            <div class="social-icons">
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="coach-details">
+                        <h3 class="coach-name">Dr. Sophia Lin</h3>
+                        <span class="coach-role">Director of Human Performance & Cryo</span>
+                        <p class="coach-bio">Specialist in hyperbaric recovery, hormonal optimization, and VO2-max telemetry analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: INTERACTIVE FITNESS TOOL / CALCULATOR (ZOOM IN) -->
+    <section class="section calculator-section" id="calculator">
+        <div class="container">
+            <div class="calc-box reveal-zoom">
+                <div class="calc-header">
+                    <div class="tag-pill"><i class="fa-solid fa-calculator"></i> REAL-TIME BIOMETRICS</div>
+                    <h2 class="section-title">CALCULATE YOUR <span class="text-accent">DAILY TARGET</span></h2>
+                    <p class="section-subtitle">Input your stats to instantly generate your recommended daily caloric intake, protein macro targets, and ideal APEX training split.</p>
+                </div>
+
+                <div class="calc-grid">
+                    <div class="calc-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="calcAge">Age (Years)</label>
+                                <input type="number" id="calcAge" class="form-input" value="28" min="16" max="90" />
+                            </div>
+                            <div class="form-group">
+                                <label for="calcGender">Gender</label>
+                                <select id="calcGender" class="form-input">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="calcWeight">Weight (kg)</label>
+                                <input type="number" id="calcWeight" class="form-input" value="78" min="30" max="250" />
+                            </div>
+                            <div class="form-group">
+                                <label for="calcHeight">Height (cm)</label>
+                                <input type="number" id="calcHeight" class="form-input" value="180" min="120" max="240" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="calcGoal">Primary Objective</label>
+                            <select id="calcGoal" class="form-input">
+                                <option value="cut">Fat Loss & Muscle Retention (Deficit)</option>
+                                <option value="maintain">Recomposition & Stamina (Maintenance)</option>
+                                <option value="bulk" selected>Lean Muscle Hypertrophy & Power (Surplus)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="calcActivity">Weekly Activity Level</label>
+                            <select id="calcActivity" class="form-input">
+                                <option value="1.375">Light (1-2 workouts/wk)</option>
+                                <option value="1.55" selected>Moderate (3-5 intense sessions/wk)</option>
+                                <option value="1.725">Heavy Athlete (6-7 sessions/wk)</option>
+                            </select>
+                        </div>
+
+                        <button type="button" id="computeStatsBtn" class="btn btn-primary btn-full">
+                            <span>Calculate Performance Plan</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="calc-results-card">
+                        <div class="results-header">
+                            <span class="results-tag">ESTIMATED METRICS</span>
+                            <h3 id="planTitle">Lean Muscle Hypertrophy</h3>
+                        </div>
+
+                        <div class="metrics-row">
+                            <div class="metric-pill">
+                                <span class="metric-val" id="calResult">2,780</span>
+                                <span class="metric-name">Kcal / Day</span>
+                            </div>
+                            <div class="metric-pill">
+                                <span class="metric-val" id="proteinResult">172g</span>
+                                <span class="metric-name">Protein Goal</span>
+                            </div>
+                            <div class="metric-pill">
+                                <span class="metric-val" id="bmiResult">24.1</span>
+                                <span class="metric-name">BMI Index</span>
+                            </div>
+                        </div>
+
+                        <div class="recommended-split">
+                            <h4>Recommended APEX Program:</h4>
+                            <p id="splitRecommendation"><strong>4-Day Heavy Hypertrophy + 1-Day HYROX Sprint</strong>. Focus on compound mechanical tension combined with cold contrast recovery.</p>
+                        </div>
+
+                        <button class="btn btn-outline btn-full open-pass-trigger">Get Free Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: MEMBERSHIP TIERS / PRICING (SLIDE-IN FROM SIDES) -->
+    <section class="section pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header text-center reveal-up">
+                <div class="tag-pill"><i class="fa-solid fa-crown"></i> EXCLUSIVE TIERS</div>
+                <h2 class="section-title">INVEST IN YOUR <span class="text-accent">PRIME</span></h2>
+                <p class="section-subtitle">No lock-in contracts. Transparent monthly dues with unlimited access to facility amenities and digital tracking apps.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Tier 1: Core (Slide from Left) -->
+                <div class="pricing-card reveal-left">
+                    <div class="pricing-header">
+                        <span class="tier-name">CORE ATHLETE</span>
+                        <div class="price-wrap">
+                            <span class="currency">$</span>
+                            <span class="amount">149</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <p class="tier-desc">Complete access to main facility floor, heavy platforms, and locker suites.</p>
+                    </div>
+                    <ul class="pricing-perks">
+                        <li><i class="fa-solid fa-check"></i> 24/7 Access to 25,000 sq ft main floor</li>
+                        <li><i class="fa-solid fa-check"></i> Eleiko lifting platforms & turf track</li>
+                        <li><i class="fa-solid fa-check"></i> Luxury locker rooms & steam rooms</li>
+                        <li><i class="fa-solid fa-check"></i> Complimentary towel & shake bar access</li>
+                        <li class="is-muted"><i class="fa-solid fa-xmark"></i> Private hyperbaric & cold plunge suites</li>
+                        <li class="is-muted"><i class="fa-solid fa-xmark"></i> 1-on-1 dedicated master coach</li>
+                    </ul>
+                    <button class="btn btn-outline btn-full open-pass-trigger">Choose Core</button>
+                </div>
+
+                <!-- Tier 2: Performance (Featured - Zoom In) -->
+                <div class="pricing-card is-featured reveal-zoom" data-delay="150">
+                    <div class="featured-badge">MOST POPULAR</div>
+                    <div class="pricing-header">
+                        <span class="tier-name text-accent">PERFORMANCE PRO</span>
+                        <div class="price-wrap">
+                            <span class="currency">$</span>
+                            <span class="amount">249</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <p class="tier-desc">For serious athletes seeking structured coaching, group programming, and full spa recovery.</p>
+                    </div>
+                    <ul class="pricing-perks">
+                        <li><i class="fa-solid fa-check"></i> Everything in Core Athlete tier</li>
+                        <li><i class="fa-solid fa-check"></i> Unlimited HYROX, Strength & Boxing classes</li>
+                        <li><i class="fa-solid fa-check"></i> Unlimited Cold Plunge & Infrared Sauna</li>
+                        <li><i class="fa-solid fa-check"></i> Monthly InBody 3D body scans & telemetry</li>
+                        <li><i class="fa-solid fa-check"></i> 2 Guest VIP passes per month</li>
+                        <li class="is-muted"><i class="fa-solid fa-xmark"></i> 1-on-1 dedicated master coach</li>
+                    </ul>
+                    <button class="btn btn-primary btn-full open-pass-trigger">Join Performance Pro</button>
+                </div>
+
+                <!-- Tier 3: Apex Black Tier (Slide from Right) -->
+                <div class="pricing-card reveal-right" data-delay="300">
+                    <div class="pricing-header">
+                        <span class="tier-name">APEX BLACK VIP</span>
+                        <div class="price-wrap">
+                            <span class="currency">$</span>
+                            <span class="amount">489</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <p class="tier-desc">The ultimate private concierge fitness experience with dedicated 1-on-1 Olympic coaching.</p>
+                    </div>
+                    <ul class="pricing-perks">
+                        <li><i class="fa-solid fa-check"></i> All Performance Pro benefits included</li>
+                        <li><i class="fa-solid fa-check"></i> 4x 1-on-1 Private Master Coach sessions/mo</li>
+                        <li><i class="fa-solid fa-check"></i> Private VIP locker with laundry concierge</li>
+                        <li><i class="fa-solid fa-check"></i> Hyperbaric oxygen chamber access</li>
+                        <li><i class="fa-solid fa-check"></i> Custom nutritionist meal delivery integration</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 direct coach WhatsApp line</li>
+                    </ul>
+                    <button class="btn btn-outline btn-full open-pass-trigger">Apply for Black VIP</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: CLIENT TESTIMONIALS (ZOOM-IN & SLIDE ANIMATION) -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header text-center reveal-up">
+                <div class="tag-pill"><i class="fa-solid fa-star"></i> VERIFIED RESULTS</div>
+                <h2 class="section-title">VOICES OF <span class="text-accent">CHAMPIONS</span></h2>
+                <p class="section-subtitle">Real experiences from our community of business executives, collegiate athletes, and fitness enthusiasts.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal-left">
+                    <div class="star-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-quote">"APEX is unlike any gym in New York. The Eleiko equipment is flawless, the coaches are truly elite, and the cold plunge + sauna suite shaved days off my recovery."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="David Sterling" class="author-avatar" />
+                        <div>
+                            <strong>David Sterling</strong>
+                            <span>Hedge Fund Founder & Triathlete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal-zoom" data-delay="150">
+                    <div class="star-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-quote">"Dropped 6% body fat and hit a 405lb deadlift PR within 4 months of Coach Marcus's periodization program. The community energy is unmatched."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Sarah Jenkins" class="author-avatar" />
+                        <div>
+                            <strong>Sarah Jenkins</strong>
+                            <span>Tech Executive & HYROX Competitor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal-right" data-delay="300">
+                    <div class="star-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-quote">"The ambiance, the lighting, the cleanliness, and the high-performance culture make working out at 6 AM something I actually look forward to every day."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Jordan Hayes" class="author-avatar" />
+                        <div>
+                            <strong>Jordan Hayes</strong>
+                            <span>Architectural Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: FAQ ACCORDION -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header text-center reveal-up">
+                <div class="tag-pill"><i class="fa-solid fa-circle-question"></i> COMMON QUESTIONS</div>
+                <h2 class="section-title">FREQUENTLY ASKED <span class="text-accent">QUESTIONS</span></h2>
+            </div>
+
+            <div class="faq-accordion reveal-zoom">
+                <div class="faq-item is-open">
+                    <button class="faq-question">
+                        <span>What makes APEX different from standard commercial gyms?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>APEX is capped at a strict member-to-sq-foot ratio to ensure zero waiting for equipment. Every piece of machinery is competition-grade (Eleiko, Hammer Strength, Woodway), paired with integrated medical recovery suites (cold plunge, infrared sauna, compression boots).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I try out the facility before joining?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer a complimentary 1-Day VIP Trial Pass that includes full facility access, locker suite privileges, and an optional 30-minute fitness assessment with a Master Coach.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are there initiation fees or long-term contracts?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No long-term locks. All memberships operate on a straightforward month-to-month basis. You can freeze or cancel your membership anytime with 14 days notice.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What are the facility hours?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The facility is accessible 24 hours a day, 7 days a week for all active members via our biometric mobile access key.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: CONTACT & 1-DAY PASS CTA -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="contact-box reveal-up">
+                <div class="contact-left">
+                    <div class="tag-pill"><i class="fa-solid fa-location-dot"></i> FLAGSHIP CLUB</div>
+                    <h2 class="section-title">CLAIM YOUR <span class="text-accent">VIP PASS</span></h2>
+                    <p class="lead-text">Experience the APEX difference for yourself. Fill out your details below and our concierge team will prepare your digital pass immediately.</p>
+
+                    <div class="contact-info-list">
+                        <div class="info-item">
+                            <i class="fa-solid fa-map-pin"></i>
+                            <div>
+                                <strong>Location</strong>
+                                <span>520 Madison Avenue, New York, NY 10022</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <strong>Direct Concierge</strong>
+                                <span>+1 (212) 890-APEX</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>Email Inquiries</strong>
+                                <span>concierge@apexperformance.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <form class="vip-form" id="vipPassForm">
+                        <h3 class="form-title">Request 1-Day VIP Pass</h3>
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" class="form-input" placeholder="e.g. Alex Morgan" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailAddress">Email Address</label>
+                            <input type="email" id="emailAddress" class="form-input" placeholder="alex@company.com" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" id="phoneNumber" class="form-input" placeholder="+1 (555) 000-0000" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fitnessGoal">Primary Training Focus</label>
+                            <select id="fitnessGoal" class="form-input">
+                                <option value="strength">Strength & Powerlifting</option>
+                                <option value="hyrox">HYROX & High-Stamina</option>
+                                <option value="recomp">Body Recomposition & Shred</option>
+                                <option value="recovery">Recovery & Longevity</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Claim 1-Day Free VIP Pass</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <p class="form-disclaimer">*Zero obligation. 1 pass per person. Valid ID required at check-in.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <span class="logo-mark"><i class="fa-solid fa-bolt"></i></span>
+                        <div class="brand-text">
+                            <strong>APEX</strong>
+                            <span class="brand-sub">PERFORMANCE</span>
+                        </div>
+                    </div>
+                    <p class="footer-bio">The gold standard in athletic conditioning, biomechanics, and luxury recovery. Elevating physical potential since 2018.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#hero">Home Slider</a></li>
+                        <li><a href="#programs">Training Programs</a></li>
+                        <li><a href="#facility">Facility Tour</a></li>
+                        <li><a href="#coaches">Master Coaches</a></li>
+                        <li><a href="#pricing">Membership Plans</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#programs">Heavy Hypertrophy</a></li>
+                        <li><a href="#programs">HYROX Conditioning</a></li>
+                        <li><a href="#programs">Apex Boxing Ring</a></li>
+                        <li><a href="#programs">Cryo Recovery Lounge</a></li>
+                        <li><a href="#programs">Olympic Lifting Track</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Hours & Access</h4>
+                    <p class="footer-info-text"><strong>Members:</strong> 24 Hours / 7 Days</p>
+                    <p class="footer-info-text"><strong>Staffed Concierge:</strong><br />Mon - Fri: 5:00 AM – 11:00 PM<br />Sat - Sun: 6:00 AM – 10:00 PM</p>
+                    <p class="footer-info-text"><strong>Location:</strong> 520 Madison Ave, NYC</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 APEX Performance Club Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Membership</a>
+                    <a href="#">Safety & Health Standards</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL: FREE VIP PASS -->
+    <div class="modal-backdrop" id="vipModal" aria-hidden="true">
+        <div class="modal-card">
+            <button class="modal-close" id="closeModalBtn" aria-label="Close dialog">&times;</button>
+            <div class="modal-header">
+                <div class="tag-pill"><i class="fa-solid fa-id-card"></i> 1-DAY PASS</div>
+                <h3>YOUR VIP TRIAL PASS</h3>
+                <p>Complete the form below to receive instant access to APEX Madison Ave.</p>
+            </div>
+            <form class="modal-form" id="modalVipForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-input" placeholder="Your Name" required />
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-input" placeholder="your@email.com" required />
+                </div>
+                <div class="form-group">
+                    <label>Preferred Visit Date</label>
+                    <input type="date" class="form-input" required />
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Generate Digital Pass</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop" aria-label="Scroll back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- NOTIFICATION TOAST -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMsg">VIP Pass Request Received! Check your email.</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
